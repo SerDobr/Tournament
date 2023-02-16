@@ -13,8 +13,8 @@ class GameTest {
         Game game = new Game();
         Player vasy = new Player(1, "Вася", 100);
         Player fedy = new Player(2, "Федя", 80);
-        game.register(vasy);
-        game.register(fedy);
+        game.register("Vasy", vasy);
+        game.register("Fedy", fedy);
         int actual = game.round("Вася", "Федя");
         int expected = 1;
         Assertions.assertEquals(expected, actual);
@@ -27,8 +27,8 @@ class GameTest {
         Game game = new Game();
         Player vasy = new Player(1, "Вася", 100);
         Player fedy = new Player(2, "Федя", 200);
-        game.register(vasy);
-        game.register(fedy);
+        game.register("Vasa", vasy);
+        game.register("Fedy", fedy);
         int actual = game.round("Вася", "Федя");
         int expected = 2;
         Assertions.assertEquals(expected, actual);
@@ -41,8 +41,8 @@ class GameTest {
         Game game = new Game();
         Player vasy = new Player(1, "Вася", 100);
         Player fedy = new Player(2, "Федя", 100);
-        game.register(vasy);
-        game.register(fedy);
+        game.register("Vasa", vasy);
+        game.register("Fedy", fedy);
         int actual = game.round("Вася", "Федя");
         int expected = 0;
         Assertions.assertEquals(expected, actual);
@@ -54,8 +54,8 @@ class GameTest {
         Game game = new Game();
         Player vasy = new Player(1, "Вася", 100);
         Player fedy = new Player(2, "Федя", 100);
-        game.register(vasy);
-        game.register(fedy);
+        game.register("Vasa", vasy);
+        game.register("Fedy", fedy);
         Assertions.assertThrows(NotRegisteredException.class, () -> {
             game.round("Дима", "Вася");
 
@@ -68,8 +68,8 @@ class GameTest {
         Game game = new Game();
         Player vasy = new Player(1, "Вася", 200);
         Player fedy = new Player(2, "Федя", 100);
-        game.register(vasy);
-        game.register(fedy);
+        game.register("Vasy", vasy);
+        game.register("Fedy", fedy);
         Assertions.assertThrows(NotRegisteredException.class, () -> {
             game.round("Вася", "Дима");
 
@@ -82,8 +82,8 @@ class GameTest {
         Game game = new Game();
         Player vasy = new Player(1, "Вася", 200);
         Player fedy = new Player(2, "Федя", 100);
-        game.register(vasy);
-        game.register(fedy);
+        game.register("Vasy", vasy);
+        game.register("Fedy", fedy);
         Assertions.assertThrows(NotRegisteredException.class, () -> {
             game.round("Дима", "Леон");
 
