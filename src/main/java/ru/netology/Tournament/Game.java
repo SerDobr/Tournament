@@ -5,17 +5,17 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Game {
-    protected HashMap<String,Player> players = new HashMap<>();
+    protected HashMap<String, Player> players = new HashMap<>();
 
-    public void register(String name,Player player) {
-        players.put(name,player);
+    public void register(String name, Player player) {
+        players.put(name, player);
     }
 
     public int round(String playerName1, String playerName2) {
         Player player1 = null;
         Player player2 = null;
 
-        for (Player player : players.values() ) {
+        for (Player player : players.values()) {
             if (player.getName().equals(playerName1)) {
                 player1 = player;
             }
